@@ -1,0 +1,11 @@
+# Runtime dependencies for the ampprot harmonisation build.
+# Pinned to the versions the 2026-08-22 build was produced with.
+# Requires Python >= 3.12 (the code uses PEP 604 unions and `from __future__
+# import annotations`; it was run on CPython 3.12.3).
+
+numpy==2.4.4        # matrices, NaN-aware statistics, missing-reason encoding
+pandas==2.3.3       # every table; nullable dtypes are relied on for honest nulls
+h5py==3.16.0        # the single HDF5 output
+scipy==1.17.1       # scipy.stats.norm / rankdata for the rank inverse-normal transform
+openpyxl==3.1.5     # pandas.read_excel backend for the .xlsx.gz annotation sheets
+pyarrow==23.0.1     # parquet for the tabs/ bundles (WP-13); dtypes and nulls survive

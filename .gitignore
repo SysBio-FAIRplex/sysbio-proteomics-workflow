@@ -1,0 +1,42 @@
+# Deny by default. This repository is code and its own documentation.
+#
+# Nothing enters it unless named below. No source delivery, no built
+# artifact, no sample sheet, no clinical table, no internal project
+# correspondence.
+
+# Everything at the root is ignored; re-include by name.
+/*
+!/.gitignore
+!/README.md
+!/HARMONIZATION_PLAN.md
+!/REQUIREMENTS.md
+!/requirements.txt
+!/pyproject.toml
+!/src/
+!/docs/
+
+# Source only, never bytecode.
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Data formats, denied everywhere regardless of directory.
+*.h5
+*.hdf5
+*.csv
+*.tsv
+*.csv.gz
+*.tsv.gz
+*.txt.gz
+*.xlsx
+*.xls
+*.zip
+*.parquet
+*.feather
+
+# Environments and local state.
+.venv/
+venv/
+.env
+.DS_Store
+.ipynb_checkpoints/
